@@ -18,46 +18,46 @@ public class AJP_MicroProject extends JFrame {
     private int errorCount;
     private long startTime;
     private long endTime;
-    private float totalExecutionTimeInSeconds; // New variable to store total execution time in seconds
+    private float totalExecutionTimeInSeconds;
     private JFrame resultFrame = new JFrame();
 
+
     private static final String[] WORDS = {
-      	  "The dictionary meaning of advance is a forward"
-      		      + "\nmovement or development or improvement and"			
-      		      + "\nthe meaning of improve means thing that makes"
-      		      + "\nsomething bette.All in all,we have to improve"
-      		      + "\nour basic knowledge to master in that particular"
-      		      + "\nfield.",
-      		      
-       	   "Electricity is both a basic part of nature and"
-      			  + "\none of the most widely used forms of energy. The"
-      			  + "\nelectricity that we use is a secondary energy"
-      			  + "\nsource because it is produced by converting"
-      			  + "\nprimary sources of energy such as coal, natural"
-      			  + "\ngas, nuclear energy, solar energy, and wind"
-      			  + "\nenergy into electrical power."
-            
+        "The dictionary meaning of advance is a forward"
+                + "\nmovement or development or improvement and"
+                + "\nthe meaning of improve means a thing that makes"
+                + "\nsomething better. All in all, we have to improve"
+                + "\nour basic knowledge to master in that particular"
+                + "\nfield.",
+
+        "Electricity is both a basic part of nature and"
+                + "\none of the most widely used forms of energy. The"
+                + "\nelectricity that we use is a secondary energy"
+                + "\nsource because it is produced by converting"
+                + "\nprimary sources of energy such as coal, natural"
+                + "\ngas, nuclear energy, solar energy, and wind"
+                + "\nenergy into electrical power."
         // Add more lesson texts here...
     };
 
     private static final int MAX_LESSON_DURATION_MS = 300000;
 
     public AJP_MicroProject() {
-        setTitle("Manas_Patil");
+    	setTitle("Manas_Patil");
         setLayout(new BorderLayout());
 
         paragraphTextArea = new JTextArea();
         inputTextArea = new JTextArea();
         submitButton = new JButton("Submit");
         speedTA = new JTextArea();
-        re_a = new JButton("Re-Attend");
+        re_a = new JButton("Re_Attend");
 
         JPanel inputPanel = new JPanel(new BorderLayout());
 
         // Add a separator and set its color to white
         JSeparator separator = new JSeparator();
         separator.setOrientation(SwingConstants.HORIZONTAL);
-        separator.setPreferredSize(new Dimension(20, 15)); // Adjust the gap size
+        separator.setPreferredSize(new Dimension(20, 20)); // Adjust the gap size
         separator.setForeground(Color.white); // Set the color to white
         
         inputPanel.add(separator, BorderLayout.NORTH); // Add the separator above the inputTextArea
@@ -122,7 +122,6 @@ public class AJP_MicroProject extends JFrame {
         errorCount = 0;
         startTime = System.currentTimeMillis();
         endTime = 0;
-        
 
         timer = new Timer(MAX_LESSON_DURATION_MS, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -143,6 +142,7 @@ public class AJP_MicroProject extends JFrame {
         
         float totalExecutionTime = System.currentTimeMillis() - startTime;
         totalExecutionTimeInSeconds = totalExecutionTime / 1000; // Calculate in seconds
+        //System.out.println();
         
         speed_output.setText("	Lesson completed...! \n\nTyping Speed: " + typingSpeed + " WPM.\n\nMismatch Count: " + mismatchCount
         		+".\n\nDuration: " + totalExecutionTimeInSeconds + " sec.");
